@@ -14,7 +14,6 @@ function Person(name, date, amount) {
     };
 
     this.addMoney = function(sum, title) {
-
         this.amount += sum;
         const transaction = `${title}: ${sum}`;
         transactions = [...transactions, transaction];
