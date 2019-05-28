@@ -1,10 +1,10 @@
 function Person(name, date, amount) {
-    let transactions = [];
+    this.transactions = [];
     this.name = name;
     this.date = date;
     this.amount = amount;
-    const initial = `Initial: ${this.amount}`;
-    transactions = [transactions, initial];
+    this.initial = `Initial: ${this.amount}`;
+    this.transactions = [this.transactions, this.initial];
 
     this.getInfo = function() {
         const today = new Date();
@@ -16,16 +16,16 @@ function Person(name, date, amount) {
     this.addMoney = function(sum, title) {
         this.amount += sum;
         const transaction = `${title}: ${sum}`;
-        transactions = [...transactions, transaction];
+        this.transactions = [...this.transactions, transaction];
     };
 
     this.withdrawMoney = function(sum, title) {
         this.amount -= sum;
         const transaction = `${title}: ${-sum}`;
-        transactions = [...transactions, transaction];
+        this.transactions = [...this.transactions, transaction];
     };
 
     this.getAccountHistory = function() {
-        console.log(transactions);
+        console.log(this.transactions);
     }
 }
