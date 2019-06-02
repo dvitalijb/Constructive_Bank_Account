@@ -22,7 +22,7 @@ Person.prototype.addMoney = function(sum, title) {
 Person.prototype.withdrawMoney = function(sum, title) {
     this.amount -= sum;
     const transaction = `${title}: ${-sum}`;
-    this.transactions = [...this.transactions, transaction];
+    this.transactions.push(transaction);
 };
 
 Person.prototype.getAccountHistory = function() {
